@@ -1,6 +1,7 @@
 {
   "name": "testpaket",
   "version": "0.1.0",
+  "description": "LILLYDOO test package |  Test diapers and wet wipes for free",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
