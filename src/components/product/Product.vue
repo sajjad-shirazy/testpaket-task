@@ -59,9 +59,12 @@ export default {
 </script>
 <style lang="scss" scoped>
 @mixin product-variant($color) {
-    background-color: $color;
-    border-color: $color;
-    color: #fff;
+    &:hover,
+    &.selected {
+        background-color: $color;
+        border-color: $color;
+        color: #fff;
+    }
 }
 .size {
     cursor: pointer;
@@ -72,34 +75,19 @@ export default {
     color: #7c7c7c;
     margin: 3px;
     &.size-1 {
-        &:hover,
-        &.selected {
-            @include product-variant(#ec8ca7);
-        }
+        @include product-variant(#ec8ca7);
     }
     &.size-2nd {
-        &:hover,
-        &.selected {
-            @include product-variant(#82aedd);
-        }
+        @include product-variant(#82aedd);
     }
     &.size-3rd {
-        &:hover,
-        &.selected {
-            @include product-variant(#cdd91f);
-        }
+        @include product-variant(#cdd91f);
     }
     &.size-4th {
-        &:hover,
-        &.selected {
-            @include product-variant(#00afab);
-        }
+        @include product-variant(#00afab);
     }
     &.size-5 {
-        &:hover,
-        &.selected {
-            @include product-variant(#febe20);
-        }
+        @include product-variant(#febe20);
     }
 }
 </style>
