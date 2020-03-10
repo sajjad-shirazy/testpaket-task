@@ -12,7 +12,7 @@
                     :key="i"
                     class="size"
                     @click="selectedSize = size.value"
-                    :class="{ selected: selectedSize == size.value }"
+                    :class="{ selected: selectedSize == size.value, [`size-${size.title}`]: true }"
                 >
                     <h4>{{ size.title }}</h4>
                     <small>({{ size.value }})</small>
@@ -58,6 +58,11 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+@mixin product-variant($color) {
+    background-color: $color;
+    border-color: $color;
+    color: #fff;
+}
 .size {
     cursor: pointer;
     border: 1px solid #7c7c7c;
@@ -66,11 +71,35 @@ export default {
     padding: 7px 5px 2px 5px;
     color: #7c7c7c;
     margin: 3px;
-    &:hover,
-    &.selected {
-        background-color: #00afab;
-        border-color: #00afab;
-        color: #fff;
+    &.size-1 {
+        &:hover,
+        &.selected {
+            @include product-variant(#ec8ca7);
+        }
+    }
+    &.size-2nd {
+        &:hover,
+        &.selected {
+            @include product-variant(#82aedd);
+        }
+    }
+    &.size-3rd {
+        &:hover,
+        &.selected {
+            @include product-variant(#cdd91f);
+        }
+    }
+    &.size-4th {
+        &:hover,
+        &.selected {
+            @include product-variant(#00afab);
+        }
+    }
+    &.size-5 {
+        &:hover,
+        &.selected {
+            @include product-variant(#febe20);
+        }
     }
 }
 </style>
